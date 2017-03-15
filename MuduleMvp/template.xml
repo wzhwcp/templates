@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<template
+	format="5"
+    revision="5"
+    name="Module MVP"
+    minApi="9"
+    minBuildApi="14"
+    description="Creates a MVP module.">
+
+	<category value="Activity" />
+	<formfactor value="Mobile" />
+
+    <parameter
+        id="moduleClass"
+        name="Module Name"
+        type="string"
+        constraints="class|unique|nonempty"
+        default="Main"
+        help="The name of the Module to create" />
+
+    <parameter
+        id="layoutName"
+        name="Layout Name"
+        type="string"
+        constraints="layout|unique|nonempty"
+        suggest="${activityToLayout(moduleClass)}"
+        default="main"
+        help="The name of the layout to create for the activity" />
+
+    <parameter
+        id="generateLayout"
+        name="Generate Layout File"
+        type="boolean"
+        default="true"
+        help="If true, a layout file will be generated" />
+
+    <parameter
+        id="isLauncher"
+        name="Launcher Activity"
+        type="boolean"
+        default="false"
+        help="If true, this activity will have a CATEGORY_LAUNCHER intent filter, making it visible in the launcher" />
+
+        <!-- <parameter -->
+
+    <thumbs>
+        <!-- default thumbnail is required -->
+        <thumb>mvp.png</thumb>
+    </thumbs>
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>
