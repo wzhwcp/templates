@@ -20,7 +20,5 @@
     <instantiate from="root/src/app_package/SimplePresenter.java.ftl"
                    to="${escapeXmlAttribute(srcOut)}/${presenterName}.java" />
 
-				   
-
     <open file="${escapeXmlAttribute(srcOut)}/${activityClass}.java" />
 </recipe>
