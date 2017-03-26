@@ -1,2 +1,2 @@
 # templates
-custom remplates
+custom templates
