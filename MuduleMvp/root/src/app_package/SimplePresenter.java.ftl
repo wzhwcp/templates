@@ -7,7 +7,7 @@ import io.reactivex.disposables.CompositeDisposable;
 public class ${presenterName}<V extends ${mvpViewName}> extends BasePresenter<V> 
 	implements ${mvpPresenterName}<V>{
 
-    public LoginPresenter(DataManager dataManager, CompositeDisposable compositeDisposable) {
+    public ${presenterName}(DataManager dataManager, CompositeDisposable compositeDisposable) {
         super(dataManager, compositeDisposable);
     }
 }

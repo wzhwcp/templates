@@ -11,6 +11,13 @@
 	<formfactor value="Mobile" />
 
     <parameter
+        id="isActivity"
+        name="Generate Activity File"
+        type="boolean"
+        default="true"
+        help="If true, a Activity file will be generated.false fragment" />
+
+    <parameter
         id="moduleClass"
         name="Module Name"
         type="string"

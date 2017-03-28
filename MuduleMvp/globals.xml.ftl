@@ -1,7 +1,12 @@
 <?xml version="1.0"?>
 <globals>
 	
+<#if isActivity>
 	<global id="activityClass" value="${moduleClass}Activity" />
+<#else>
+	<global id="activityClass" value="${moduleClass}Fragment" />
+</#if>
+
 	<global id="mvpPresenterName" value="${moduleClass}MvpPresenter" />
 	<global id="mvpViewName" value="${moduleClass}MvpView" />
 	<global id="presenterName" value="${moduleClass}Presenter" />
