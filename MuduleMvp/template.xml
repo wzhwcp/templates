@@ -23,7 +23,7 @@
         type="string"
         constraints="class|unique|nonempty"
         default="Main"
-        help="The name of the Module to create" />
+        help="The name of the Module to create and do no add the string of `fragment` or `activity`" />
 
     <parameter
         id="layoutName"
