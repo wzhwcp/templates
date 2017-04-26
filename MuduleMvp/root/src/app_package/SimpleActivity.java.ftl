@@ -1,6 +1,8 @@
 package ${packageName};
 
 import android.os.Bundle;
+import android.content.Context;
+import android.content.Intent;
 import ${applicationPackage}.ui.base.BaseActivity;
 <#if applicationPackage?? >
 import ${applicationPackage}.R;
@@ -19,6 +21,11 @@ public class ${activityClass} extends BaseActivity implements ${mvpViewName}{
 	@Override
     protected void setUp() {
         
+    }
+
+    public static Intent getStartIntent(Context context) {
+        Intent intent = new Intent(context, ${activityClass}.class);
+        return intent;
     }
 	
 }
