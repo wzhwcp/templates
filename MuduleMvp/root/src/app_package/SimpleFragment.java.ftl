@@ -40,7 +40,7 @@ public class ${activityClass} extends BaseFragment implements ${mvpViewName}{
             setUnBinder(ButterKnife.bind(this, rootView));
 
         }
-        ButterKnife.bind(this, rootView);
+        
 </#if>
         return rootView;
     }
