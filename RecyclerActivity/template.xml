@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<template
+	format="5"
+    revision="5"
+    name="Recycler Activity"
+    minApi="9"
+    minBuildApi="14"
+    description="Creates a Recycler Activity module.">
+
+	<category value="Activity" />
+	<formfactor value="Mobile" />
+
+    <parameter
+        id="isActivity"
+        name="Generate Activity File"
+        type="boolean"
+        default="true"
+        help="If true, a Activity file will be generated.false fragment" />
+
+    <parameter
+        id="moduleClass"
+        name="Module Name"
+        type="string"
+        constraints="class|unique|nonempty"
+        default="Main"
+        help="The name of the Module to create and do no add the string of `activity`" />
+
+    <parameter
+        id="layoutName"
+        name="Layout Name"
+        type="string"
+        constraints="layout|unique|nonempty"
+        suggest="${activityToLayout(moduleClass)}"
+        default="main"
+        help="The name of the layout to create for the activity" />
+
+    <parameter
+        id="generateLayout"
+        name="Generate Layout File"
+        type="boolean"
+        default="true"
+        help="If true, a layout file will be generated" />
+
+    <parameter
+        id="recyclerViewItemLayout"
+        name="Generate RecyclerView Item Layout File"
+        type="string"
+        default="item"
+        help="a layout file will be generated" />
+
+    <parameter
+        id="recyclerViewItemBean"
+        name="Generate RecyclerView Bean Class File"
+        type="string"
+        default="Bean"
+        help="a bean class file will be generated" />
+
+    <parameter
+        id="isLauncher"
+        name="Launcher Activity"
+        type="boolean"
+        default="false"
+        help="If true, this activity will have a CATEGORY_LAUNCHER intent filter, making it visible in the launcher" />
+
+        <!-- <parameter -->
+
+    <thumbs>
+        <!-- default thumbnail is required -->
+        <thumb>recyclerview.png</thumb>
+    </thumbs>
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>
