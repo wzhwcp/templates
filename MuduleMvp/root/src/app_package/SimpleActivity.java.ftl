@@ -24,8 +24,7 @@ public class ${activityClass} extends BaseActivity implements ${mvpViewName}{
     }
 
     public static Intent getStartIntent(Context context) {
-        Intent intent = new Intent(context, ${activityClass}.class);
-        return intent;
+        return new Intent(context, ${activityClass}.class);
     }
 	
 }

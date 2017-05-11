@@ -19,8 +19,7 @@ public class ${activityClass} extends BaseFragment implements ${mvpViewName}{
 
 
     public static ${activityClass} newInstance() {
-        ${activityClass} fragment = new ${activityClass}();
-        return fragment;
+        return new ${activityClass}();
     }
 
     @Override
