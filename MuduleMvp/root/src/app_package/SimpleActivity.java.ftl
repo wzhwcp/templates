@@ -13,9 +13,13 @@ public class ${activityClass} extends BaseActivity implements ${mvpViewName}{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-<#if generateLayout>
-        setContentView(R.layout.${layoutName});
-</#if>
+	<#if generateLayout>
+		<#if isActivity>
+			setContentView(R.layout.${layoutName01});
+		<#else>
+			setContentView(R.layout.${layoutName02});
+		</#if>
+	</#if>
 	}
 
 	@Override

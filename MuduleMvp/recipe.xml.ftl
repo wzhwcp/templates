@@ -1,19 +1,22 @@
 <?xml version="1.0"?>
 <recipe>
 
-<#if generateLayout>
-    <#include "../common/recipe_simple.xml.ftl" />
-    <open file="${escapeXmlAttribute(resOut)}/layout/${layoutName}.xml" />
-</#if>
-
-<#if isActivity>
-    <#include "../common/recipe_manifest.xml.ftl" />
-    <instantiate from="root/src/app_package/SimpleActivity.java.ftl"
+	<#if generateLayout>
+		<#include "../common/recipe_simple.xml.ftl" />
+		<#if isActivity>
+			<open file="${escapeXmlAttribute(resOut)}/layout/${layoutName01}.xml" />
+		<#else>
+			<open file="${escapeXmlAttribute(resOut)}/layout/${layoutName02}.xml" />
+		</#if>
+	</#if>
+	<#if isActivity>
+		<#include "../common/recipe_manifest.xml.ftl" />
+		<instantiate from="root/src/app_package/SimpleActivity.java.ftl"
+					   to="${escapeXmlAttribute(srcOut)}/${activityClass}.java" />
+	<#else>
+		<instantiate from="root/src/app_package/SimpleFragment.java.ftl"
                    to="${escapeXmlAttribute(srcOut)}/${activityClass}.java" />
-<#else>
-    <instantiate from="root/src/app_package/SimpleFragment.java.ftl"
-                   to="${escapeXmlAttribute(srcOut)}/${activityClass}.java" />
-</#if>    
+	</#if>    
 
     <instantiate from="root/src/app_package/SimpleMvpPresenter.java.ftl"
                    to="${escapeXmlAttribute(srcOut)}/${mvpPresenterName}.java" />

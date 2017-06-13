@@ -34,7 +34,11 @@ public class ${activityClass} extends BaseFragment implements ${mvpViewName}{
 <#if generateLayout>
         // Inflate the layout for this fragment
         if (rootView == null) {
-            rootView = inflater.inflate(R.layout.${layoutName}, container, false);
+			<#if isActivity>
+				rootView = inflater.inflate(R.layout.${layoutName01}, container, false);
+			<#else>
+				rootView = inflater.inflate(R.layout.${layoutName02}, container, false);
+			</#if>
 
             setUnBinder(ButterKnife.bind(this, rootView));
 
